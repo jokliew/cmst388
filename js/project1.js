@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.selector-examples li:first-child').classList.add('first');
         document.querySelectorAll('.selector-examples li:nth-child(odd)').forEach(el => el.classList.add('odd'));
         // TODO: Add remaining selectors using nth-child, loops and conditional logic where approriate. (https://www.w3schools.com/CSSref/sel_nth-child.php) 
+        document.querySelectorAll('.selector-examples li:nth-child(even)').forEach(el => el.classList.add('even'));
+        
     });
 
     /* PART 3: REPLACEMENT TEXT
