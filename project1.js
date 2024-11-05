@@ -5,16 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
     */
 
     // TODO: Declare variables for name, age, and isStudent setting values with your own name, age, and student status.
-    
+    let name = "Joselle";
+    let age = 24;
+    let isStudent = true;
     const introduction = (name, age, isStudent) => {
 
         // TODO: Check if isStudent is true or false and set text output to a new variable called studentStatus
         // - If isStudent is true, set studentStatus to "I am currently a student."
         // - If isStudent is false, set studentStatus to "I am not a student."
+        let studentStatus = '';
+
+        if (isStudent == true) {
+             studentStatus = "I am currently a student.";
+        } else {
+             studentStatus = "I am not a student.";
+        }
         
         // TODO: Using string concatenation, store a message to a new variable called message. 
         // - The message variable should should include your name, age, and a statement about whether you are a student or not. 
         // - Example message format: "Hello, my name is John. I am 25 years old and I am currently a student."
+       let message = 'Hello, my name is $(name). I am $(age) years old and $(studentStatus)';
     
         // DO NOT CHANGE: The following code selects the messageDisplayArea ID in the HTML file and appends a div 
         // tag with the message variable defined above.
