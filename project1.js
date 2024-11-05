@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // - If isStudent is false, set studentStatus to "I am not a student."
         let studentStatus = '';
 
-        if (isStudent == true) {
+        if (isStudent === true) {
              studentStatus = "I am currently a student.";
         } else {
              studentStatus = "I am not a student.";
