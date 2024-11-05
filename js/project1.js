@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.selector-examples li:nth-child(odd)').forEach(el => el.classList.add('odd'));
         // TODO: Add remaining selectors using nth-child, loops and conditional logic where approriate. (https://www.w3schools.com/CSSref/sel_nth-child.php) 
         document.querySelectorAll('.selector-examples li:nth-child(even)').forEach(el => el.classList.add('even'));
-        document.querySelector('.selector-examples li:4th-child').classList.add('highlighter');
-        document.querySelector('.selector-examples li:5th-child').classList.add('highlighter');
+        document.querySelector('.selector-examples li:nth-child(4)').classList.add('highlighter');
+        document.querySelector('.selector-examples li:nth-child(5)').classList.add('highlighter');
         document.querySelector('.selector-examples li:last-child').classList.add('last');
     });
 
