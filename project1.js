@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // TODO: Using string concatenation, store a message to a new variable called message. 
         // - The message variable should should include your name, age, and a statement about whether you are a student or not. 
         // - Example message format: "Hello, my name is John. I am 25 years old and I am currently a student."
-       let message = `Hello, my name is $(name). I am $(age) years old and $(studentStatus)`;
+       let message = `Hello, my name is ${name}. I am ${age} years old and ${studentStatus}`;
     
         // DO NOT CHANGE: The following code selects the messageDisplayArea ID in the HTML file and appends a div 
         // tag with the message variable defined above.
