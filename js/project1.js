@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // - 1: Create a new variable called inputValue and set it to the value of the #newLanguage id
         // - 2: Create a new variable called element and set it to the .currentLanguage class
         // - 3: Using .innerHTML (https://www.w3schools.com/jsref/prop_html_innerhtml.asp), update element with inputValue
+        let inputValue = document.getElementById('newLanguage').value;
+        let element = document.querySelector('.currentLanguage');
+        element.innerHTML = inputValue;
     });
 
     /* PART 4: TOGGLES

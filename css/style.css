@@ -3,10 +3,10 @@
     margin: 0 0 10px 0;
   }
   .selector-examples li {
-    -moz-transition: background 0.2s ease-out;
-    -o-transition: background 0.2s ease-out;
-    -webkit-transition: background 0.2s ease-out;
-    transition: background 0.2s ease-out;
+    -moz-transition: backgroud 0.2s ease-ou;
+    -o-transition: backgroud 0.2s ease-ou;
+    -webkit-transition: backgroud 0.2s ease-ou;
+    transition: backgroud 0.2s ease-ou;
     border: 1px solid white;
     padding: 2px 5px;
     list-style-position: inside;
