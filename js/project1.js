@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 box.computedStyleMap.backgroundColor = 'white'; 
             } else {
                 // TODO: element backgroundColor currently does not have boxcolor set, set it to boxColor
-                box.computedStyleMap.baackgroundColor = boxColor;
+                box.computedStyleMap.backgroundColor = boxColor;
             }
         });
     });
