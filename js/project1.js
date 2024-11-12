@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentColor = window.getComputedStyle(box).backgroundColor;
             if (currentColor === boxColor) {
                 // TODO: element backgroundColor currently has boxColor set, change it to 'white'
-                box.computedStyleMap.backgroundColor = 'white'; 
+                box.style.backgroundColor = 'white'; 
             } else {
                 // TODO: element backgroundColor currently does not have boxcolor set, set it to boxColor
-                box.computedStyleMap.backgroundColor = boxColor;
+                box.style.backgroundColor = boxColor;
             }
         });
     });
