@@ -152,8 +152,12 @@ function calculateTotal() {
 	return isValid;
   }
 
+  document.getElementById("submit").addEventListener("click", completePurchase);
+  
   function completePurchase() {
-	document.getElementById("submit").addEventListener("click", completePurchase);
+	
+	
+
 	const ticketTotal = document.getElementById("totalCost")
 
 	if (!calculateTotal() || !validateContactInfo()) {
