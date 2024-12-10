@@ -45,7 +45,7 @@ var ticketSurcharge = 0.50;
     }, 1000);
 
 	// Function to validate the number of tickets
-function validateTickets() {
+function calculateTotal() {
 	// Get the HTML input field where the user enters the number of tickets
 	const ticketInput = document.getElementById("numTickets");
 	// Get the HTML element to display error messages for ticket validation
