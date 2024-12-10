@@ -120,4 +120,50 @@ function calculateTotal() {
 	// Exit the function and indicate validation success
 	return true;
   }
+  function validateContactInfo() {
+	const nameInput = document.getElementById("name");
+	const emailInput = document.getElementById("email");
+	const nameError = document.getElementById("msgname");
+	const emailError = document.getElementById("msgemail");
   
+	let isValid = true;
+  
+	// Clear previous errors and styles
+	nameInput.style.backgroundColor = "";
+	emailInput.style.backgroundColor = "";
+	nameError.textContent = "";
+	emailError.textContent = "";
+  
+	// Validate Name
+	if (nameInput.value.trim() === "") {
+	  nameError.textContent = "Please enter your name.";
+	  nameInput.style.backgroundColor = "pink";
+	  isValid = false;
+	}
+  
+	// Validate Email
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	if (!emailRegex.test(emailInput.value.trim())) {
+	  emailError.textContent = "Please enter a valid email address.";
+	  emailInput.style.backgroundColor = "pink";
+	  isValid = false;
+	}
+  
+	return isValid;
+  }
+
+  function completePurchase() {
+	const ticketInput = document.getElementById("ticketCount");
+	const ticketCount = parseInt(ticketInput.value, 10);
+  
+	if (!calculateTotal() || !validateContactInfo()) {
+	  return false; // Prevent form submission
+	}
+  
+	// Stop the timer
+	clearInterval(timer);
+  
+	// Display success message
+	alert(`Thank you for your purchase! Total cost: ${ticketTotal.value}`)
+	return true; // Allow form submission
+  }
