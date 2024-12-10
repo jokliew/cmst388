@@ -153,9 +153,8 @@ function calculateTotal() {
   }
 
   function completePurchase() {
-	const ticketInput = document.getElementById("ticketCount");
-	const ticketCount = parseInt(ticketInput.value, 10);
-  
+	document.getElementById("submit").addEventListener("click", completePurchase);
+
 	if (!calculateTotal() || !validateContactInfo()) {
 	  return false; // Prevent form submission
 	}
