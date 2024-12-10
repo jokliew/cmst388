@@ -167,7 +167,7 @@ function calculateTotal() {
 	// Stop the timer
 	if (typeof timer !== "undefined") {
 		clearInterval(timer); // Stop the timer
-		document.getElementById("transactionTimer").innerHTML = ""; // Clear the timer display
+		document.getElementById("transactionTimer") = ""; // Clear the timer display
 		console.log("Timer destroyed after successful submission.");
 	  }
 	
