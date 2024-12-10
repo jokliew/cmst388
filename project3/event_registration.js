@@ -30,7 +30,7 @@ const timer = setInterval(() => {
 	const minutes = Math.floor(remainingTime / 60000);
 	const seconds = Math.floor((remainingTime % 60000) / 1000);
 
-	timerDisplay.textContent = ${minutes}:${seconds < 10 ? "0" : ""}${seconds};
+	timerDisplay.innerHTML = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }, 1000);
 
 
