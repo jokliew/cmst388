@@ -154,6 +154,7 @@ function calculateTotal() {
 
   function completePurchase() {
 	document.getElementById("submit").addEventListener("click", completePurchase);
+	const ticketTotal = document.getElementById("totalCost")
 
 	if (!calculateTotal() || !validateContactInfo()) {
 	  return false; // Prevent form submission
@@ -163,6 +164,6 @@ function calculateTotal() {
 	clearInterval(timer);
   
 	// Display success message
-	alert(`Thank you for your purchase! Total cost: $ `ticketTotal.value = ${totalCost.toFixed(2)}`)
+	alert(`Thank you for your purchase! Total cost: ${ticketTotal.value}`);
 	return true; // Allow form submission
   }
