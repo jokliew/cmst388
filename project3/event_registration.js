@@ -54,14 +54,37 @@ function validateTickets() {
 	const contactSection = document.getElementById("contactInformation");
 	// Get the HTML field where the total ticket cost will be displayed
 	const ticketTotal = document.getElementById("totalCost");
+
+
+	console.log("Retrieved HTML elements:", {
+		ticketInput,
+		ticketError,
+		contactSection,
+		ticketTotal,
+	  }); // Step 2: Verify element retrieval
+
+	  
   
 	// Parse the user's input as an integer (whole number)
 	const ticketCount = parseInt(ticketInput.value, 10);
   
+	console.log(`Parsed ticketCount: ${ticketCount}`); // Step 3: Log parsed input
+
 	// Clear any previous error styles or messages
 	ticketInput.style.backgroundColor = ""; // Reset the input field's background color
 	ticketError.textContent = ""; // Clear the error message text
+
+	console.log("Cleared previous styles and messages."); // Step 4: Clear actions
   
+	//VALIDATION DEBUG 
+
+	 // Validation
+	 if (isNaN(ticketCount)) {
+		console.warn("Input is not a number!"); // Step 5: Warn about invalid input
+	  } else if (ticketCount < minTickets || ticketCount > maxTickets) {
+		console.warn(`Input out of range (${minTickets}-${maxTickets}): ${ticketCount}`); // Step 6: Warn about out-of-range input
+	  }
+	  //End debug
 	/*
 	 * Validation Step:
 	 * - Check if the input is a valid number
@@ -77,6 +100,7 @@ function validateTickets() {
 	  // Reset the total cost field to "$0.00"
 	  ticketTotal.value = "$0.00";
 	  // Exit the function and indicate validation failure
+	  console.log("Validation failed: Displayed error message and reset fields."); // Step 7: Log failure
 	  return false;
 	}
   
@@ -85,13 +109,14 @@ function validateTickets() {
 	 * - Multiply the number of tickets by the ticket price (including surcharge)
 	 */
 	const totalCost = ticketCount * (costPerTicket + ticketSurcharge);
-  
+	console.log(`Calculated totalCost: $${totalCost.toFixed(2)}`); // Step 8: Log calculated cost
 	// Display the total cost in the specified field, formatted to 2 decimal places
 	ticketTotal.value = `$${totalCost.toFixed(2)}`;
   
 	// Show the contact information section since the input is valid
 	contactSection.style.display = "block";
-  
+	console.log("Validation successful: Updated total cost and displayed contact section."); // Step 9: Log success
+
 	// Exit the function and indicate validation success
 	return true;
   }
