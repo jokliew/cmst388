@@ -1,4 +1,7 @@
 /*sets text to a specific font and adds a margin*/
+h1 {
+  text-align: center;
+}
 body {
   font-family: Courier, Monospace;
   margin: 20px;
