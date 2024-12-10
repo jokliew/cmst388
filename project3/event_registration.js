@@ -152,11 +152,11 @@ function calculateTotal() {
 	return isValid;
   }
 
-  document.getElementById("submit").addEventListener("click", completePurchase);
-  
+
+
   function completePurchase() {
 	
-	
+	document.getElementById("submit").addEventListener("click", completePurchase);
 
 	const ticketTotal = document.getElementById("totalCost")
 
@@ -165,7 +165,10 @@ function calculateTotal() {
 	}
   
 	// Stop the timer
-	clearInterval(timer);
+	{
+		clearInterval(timer);
+	}
+	
   
 	// Display success message
 	alert(`Thank you for your purchase! Total cost: ${ticketTotal.value}`);
