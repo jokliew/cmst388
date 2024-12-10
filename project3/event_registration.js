@@ -163,6 +163,6 @@ function calculateTotal() {
 	clearInterval(timer);
   
 	// Display success message
-	alert(`Thank you for your purchase! Total cost: $${totalCost.toFixed(2)}`)
+	alert(`Thank you for your purchase! Total cost: $ `ticketTotal.value = ${totalCost.toFixed(2)}`)
 	return true; // Allow form submission
   }
