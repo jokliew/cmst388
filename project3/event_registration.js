@@ -14,23 +14,33 @@ var ticketSurcharge = 0.50;
 
 /*** YOUR CODE STARTS BELOW HERE ***/
 
-const timerDisplay = document.getElementById("timer"); //Finds the "timer" element in the HTML 
-const countdownDuration = 10 * 60 * 1000; //Calculates timer length in milliseconds
-const endTime = Date.now() + countdownDuration; //Adds 10 min countdown to current time
+    // Set the countdown duration in milliseconds (10 minutes)
+    var countDownDate = new Date().getTime() + 10 * 60 * 1000;
 
-const timer = setInterval(() => {
-	const remainingTime = endTime - Date.now();
-	if (remainingTime <= 0) {
-	  clearInterval(timer); // Stop the timer
-	  alert("Time's up! Redirecting to the registration page.");
-	  location.href = location.href; // Reload the page
-	  return;
-	}
+    // Update the countdown every 1 second
+    var x = setInterval(function () {
+      // Get the current time
+      var now = new Date().getTime();
 
-	const minutes = Math.floor(remainingTime / 60000);
-	const seconds = Math.floor((remainingTime % 60000) / 1000);
+      // Find the remaining time
+      var distance = countDownDate - now;
 
-	timerDisplay.innerHTML = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-}, 1000);
+      // Time calculations for minutes and seconds
+      var minutes = Math.floor(distance / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+      // Format the seconds to always show two digits
+      var formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+      // Display the result in the element with id="timer"
+      document.getElementById("timer").innerHTML = minutes + ":" + formattedSeconds;
+
+      // If the countdown is finished, stop the timer and display a message
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+        alert("Time's up! Redirecting to the registration page.");
+        location.href = location.href; // Reload the page
+      }
+    }, 1000);
 
