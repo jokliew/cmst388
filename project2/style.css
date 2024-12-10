@@ -3,6 +3,10 @@
 h1 {
   text-align: center;
 }
+img {
+  max-width: 600px;
+  align-items: center;
+}
 body {
   font-family: Courier, Monospace;
   margin: 20px;
