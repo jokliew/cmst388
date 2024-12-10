@@ -1,47 +1,103 @@
+/*sets text to a specific font and adds a margin*/
 body {
-    font-family: Courier, Monospace;
-    margin: 20px;
-  }
-  
-  form {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #ffe6ff;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input, select, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-family: Courier, Monospace;
-  }
-  
-  button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"] {
-    background-color: #39ac39;
-    color: white;
-    font-family: Courier, Monospace;
-  }
-  
-  button[type="reset"] {
-    background-color: #dc8f89;
-    color: white;
-    font-family: Courier, Monospace;
-  }
+  font-family: Courier, Monospace;
+  margin: 20px;
+}
+
+/*for the form container*/
+form {
+  max-width: 600px;
+  margin: auto;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffe6ff;
+}
+
+/*controls the field labels*/
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+fieldset {
+border: 1px solid #ccc; /* Light gray border */
+border-radius: 8px; /* Rounded corners */
+padding:30px; /* Space inside the fieldset */
+margin-bottom: 20px; /* Space between fieldsets */
+}
+
+.phone-input-group {
+  display: flex; /* Arrange input fields in a row */
+  gap: 10px; /* Add spacing between the input fields */
+}
+
+.phone-input-group input#areaCode {
+  width: calc(25% - 5px); /* Smaller width for area code */
+}
+
+.phone-input-group input#phoneNumber {
+  width: calc(75% - 5px); /* Larger width for phone number */
+}
+.meal-preference {
+margin-top: 10px; /* Add space between the legend and the radio buttons */
+}
+
+/* Style for the labels */
+.meal-preference label {
+display: flex; /* Use flexbox for label layout */
+align-items: center; /* Align radio buttons and text vertically */
+margin-bottom: 10px; /* Space between each label */
+gap: 10px; /* Space between radio button and text */
+}
+
+/* Style for the radio buttons */
+.meal-preference input[type="radio"] {
+width:10px;
+margin: 0; /* Remove default margin from radio button */
+}
+
+.contact-method {
+margin-top: 10px;
+}
+.contact-method label {
+display:flex;
+align-items: center;
+margin-bottom:10px;
+gap: 10px;
+
+}
+.contact-method input[type="checkbox"] {
+width: 10px;
+margin:0;
+}
+/* Ensure each radio button and label are inline */
+input, select, textarea {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: Courier, Monospace;
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #39ac39;
+  color: white;
+  font-family: Courier, Monospace;
+}
+
+button[type="reset"] {
+  background-color: #dc8f89;
+  color: white;
+  font-family: Courier, Monospace;
+}
