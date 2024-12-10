@@ -11,7 +11,7 @@
   
   <form id="registrationForm" onsubmit="return validateForm()">
     <header>
-      <img src="Smitten grrl boutique.png" width="600">
+      <img src="logo.png" alt="cat yawning" width="600">
       <h1>Registration Form</h1>
     </header>
     <!-- Name -->
@@ -26,8 +26,8 @@
 
     <!-- Address -->
     <fieldset>
-    <legend for="address">Address:</legend>
-    <label for="Address">Street:</label>
+    <legend>Address:</legend>
+    <label for="address">Street:</label>
     <input type="text" id="address" name="address" placeholder="Address" required>
     <br>
     <label for="city">City:</label>
@@ -96,18 +96,21 @@
     <fieldset>
     <legend>Contact Information</legend>
     <div class="phone-input-group">
-    <label for="phone-input-group"> Phone Number:</label>
+    <label for="areaCode">Phone Number:</label>
     <input type="text" id="areaCode" name="areaCode" placeholder="123" required>
     <input type="text" id="phoneNumber" name="phoneNumber" placeholder="456-7890" required>
     </div>
-    <br>
-    <div class="email-confirmation">
-      <legend>Email:</legend>
+  
+    
+   <legend>Email:</legend>
+      <div class="email-confirmation">
     <input type="email" id="email" name="email" placeholder="Email" required>
     <br>
-    <legend>Confirm Email:</legend>
+    <label>Confirm Email:
     <input type="email" id="confirmEmail" name="confirmEmail" placeholder="Confirm Email" required>
-    </fieldset>
+    </label>
+  </div>
+  </fieldset>
 
     <!-- Meal Preference -->
 <fieldset>
