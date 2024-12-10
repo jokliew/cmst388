@@ -44,3 +44,34 @@ var ticketSurcharge = 0.50;
       }
     }, 1000);
 
+	function validateTickets() {
+		// Get the HTML elements
+		const ticketInput = document.getElementById("numTickets");
+		const ticketError = document.getElementById("msgTickets");
+		const contactSection = document.getElementById("contactInformation");
+		const ticketTotal = document.getElementById("totalCost");
+	  
+		// Parse the user's input and initialize variables
+		const ticketCount = parseInt(ticketInput.value, 10);
+	  
+		// Clear previous errors and reset styles
+		ticketInput.style.backgroundColor = "";
+		ticketError.textContent = "";
+	  
+		// Validation using minTickets and maxTickets
+		if (isNaN(ticketCount) || ticketCount < minTickets || ticketCount > maxTickets) {
+		  ticketError.textContent = `Please enter a valid number of tickets (${minTickets}-${maxTickets}).`;
+		  ticketInput.style.backgroundColor = "pink";
+		  contactSection.style.display = "none";
+		  ticketTotal.value = "$0.00"; // Reset total cost
+		  return false; // Validation failed
+		}
+	  
+		// Calculate the total cost of tickets
+		const totalCost = ticketCount * (costPerTicket + ticketSurcharge);
+	  
+		// Update the total cost and display the contact information section
+		ticketTotal.value = `$${totalCost.toFixed(2)}`; // Format to 2 decimal places
+		contactSection.style.display = "block";
+		return true; // Validation successful
+	  }
