@@ -4,40 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>My Portfolio</h1>
-        <button id="themeToggleButton">Toggle Theme</button>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle">Toggle Dark Mode</button>
+        </div>
     </header>
-    <main>
-        <section id="intro">
+    <main class="container">
+        <section id="about">
             <h2>About Me</h2>
-            <p id="introText">Welcome to my portfolio! Here you can learn about my projects, skills, and more.</p>
-            <button id="editIntroButton">Edit Intro</button>
+            <p id="introduction">Hello! I am a JavaScript developer.</p>
+            <button id="edit-intro">Edit Introduction</button>
         </section>
         <section id="projects">
-            <h2>My Projects</h2>
-            <div id="projectsContainer"></div>
+            <h2>Projects</h2>
+            <div id="project-list" class="grid"></div>
         </section>
         <section id="skills">
             <h2>Skills</h2>
-            <div id="skillsContainer"></div>
+            <ul id="skill-list"></ul>
+            <div class="skill-inputs">
+                <input type="text" id="new-skill" placeholder="Add a new skill">
+                <input type="number" id="skill-level" placeholder="Proficiency level (0-100)">
+                <button id="add-skill">Add Skill</button>
+            </div>
         </section>
         <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contactForm">
+            <h2>Contact</h2>
+            <form id="contact-form">
                 <label for="name">Name:</label>
-                <input type="text" id="name" required>
+                <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" name="email" required>
                 <label for="message">Message:</label>
-                <textarea id="message" required></textarea>
+                <textarea id="message" name="message" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </section>
     </main>
-    <script src="project4.js"></script>
+    <script src="js/project4.js"></script>
 </body>
 </html>

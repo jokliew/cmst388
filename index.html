@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <button id="themeToggleButton">Toggle Theme</button>
+    </header>
+    <main>
+        <section id="intro">
+            <h2>About Me</h2>
+            <p id="introText">Welcome to my portfolio! Here you can learn about my projects, skills, and more.</p>
+            <button id="editIntroButton">Edit Intro</button>
+        </section>
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div id="projectsContainer"></div>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div id="skillsContainer"></div>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <script src="project4.js"></script>
+</body>
+</html>

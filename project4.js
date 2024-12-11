@@ -1,13 +1,16 @@
-// PART 1: SETUP VARIABLES
+// PART 1: DOM ELEMENT REFERENCES
 const introText = document.getElementById('introText');
 const editIntroButton = document.getElementById('editIntroButton');
 const projectsContainer = document.getElementById('projectsContainer');
 const skillsContainer = document.getElementById('skillsContainer');
+const addSkillButton = document.getElementById('addSkillButton');
+const newSkillInput = document.getElementById('newSkillInput');
+const skillLevelInput = document.getElementById('skillLevelInput');
 const themeToggleButton = document.getElementById('themeToggleButton');
 const contactForm = document.getElementById('contactForm');
 const body = document.body;
 
-// PART 2: IMPLEMENT DYNAMIC PROJECTS AND SKILLS
+// PART 2: DATA FOR PROJECTS AND SKILLS
 const projects = [
     { title: 'Project 1', description: 'Description of Project 1', link: '#' },
     { title: 'Project 2', description: 'Description of Project 2', link: '#' }
@@ -19,48 +22,60 @@ const skills = [
     { name: 'JavaScript', level: 75 }
 ];
 
-function displayProjects() {
+// PART 3: HELPER FUNCTIONS
+function createProjectElement(project) {
+    const projectDiv = document.createElement('div');
+    projectDiv.innerHTML = `
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.link}" target="_blank">View Project</a>
+    `;
+    return projectDiv;
+}
+
+function createSkillElement(skill) {
+    const skillDiv = document.createElement('div');
+    skillDiv.innerHTML = `
+        <p>${skill.name}</p>
+        <div class="progress">
+            <div class="progress-bar" style="width: ${skill.level}%"></div>
+        </div>
+    `;
+    return skillDiv;
+}
+
+function loadProjects() {
     projects.forEach(project => {
-        const projectDiv = document.createElement('div');
-        projectDiv.innerHTML = `
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <a href="${project.link}" target="_blank">View Project</a>
-        `;
-        projectsContainer.appendChild(projectDiv);
+        projectsContainer.appendChild(createProjectElement(project));
     });
 }
 
-function displaySkills() {
+function loadSkills() {
     skills.forEach(skill => {
-        const skillDiv = document.createElement('div');
-        skillDiv.innerHTML = `
-            <p>${skill.name}</p>
-            <div class="progress">
-                <div class="progress-bar" style="width: ${skill.level}%"></div>
-            </div>
-        `;
-        skillsContainer.appendChild(skillDiv);
+        skillsContainer.appendChild(createSkillElement(skill));
     });
 }
 
-displayProjects();
-displaySkills();
+function updateIntroText(newText) {
+    introText.textContent = newText;
+    localStorage.setItem('introText', newText);
+}
 
-// PART 3: IMPLEMENT INTRO TEXT EDITING
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+    }
+}
+
+// PART 4: EVENT LISTENERS
 editIntroButton.addEventListener('click', () => {
     const newText = prompt('Edit your intro:', introText.textContent);
     if (newText) {
-        introText.textContent = newText;
-        localStorage.setItem('introText', newText);
+        updateIntroText(newText);
     }
 });
 
-if (localStorage.getItem('introText')) {
-    introText.textContent = localStorage.getItem('introText');
-}
-
-// PART 4: IMPLEMENT CONTACT FORM FUNCTIONALITY
 contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = {
@@ -86,15 +101,17 @@ contactForm.addEventListener('submit', async (event) => {
     }
 });
 
-// PART 5: IMPLEMENT THEME TOGGLE
 themeToggleButton.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
 });
 
-(function applySavedTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
+// PART 5: INITIALIZATION
+(function initializePage() {
+    if (localStorage.getItem('introText')) {
+        introText.textContent = localStorage.getItem('introText');
     }
+    applySavedTheme();
+    loadProjects();
+    loadSkills();
 })();
